@@ -36,16 +36,6 @@ p {
     margin-top: 5px;
 }
 
-.crear-cuenta-link {
-    color: #4C4C3D; 
-    font-weight: 550;
-}
-
-.crear-cuenta-link:hover {
-    text-decoration: underline;
-}
-
-
 form {
     display: flex;
     flex-direction: column;
@@ -61,6 +51,7 @@ input {
     font-size: 16px;
     display: block; 
 }
+
 
 button {
     background-color: #7C8465;
@@ -91,31 +82,6 @@ button:hover {
     font-weight: bold;
 }
 
-
 .login-text a:hover {
-    text-decoration: underline;
-}
-
-.extra-options {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 90%;
-    margin: 0 auto 10px auto;
-    font-size: 14px;
-    color: #555;
-}
-
-.extra-options label {
-    display: flex;
-    align-items: center;
-}
-
-.extra-options a {
-    color: #4C4C3D;
-    text-decoration: none;
-}
-
-.extra-options a:hover {
     text-decoration: underline;
 }
