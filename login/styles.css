@@ -2,5 +2,37 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #879d84;
+    background-size: cover; 
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_white{
+    width: 420px;
+    height: 395px;
+    background-color: white; 
+    background-position: center;
+    border-radius: 48px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+h1 {
+    font-size: 34px;
+    color: #75766b;
+    position: absolute;
+    top: 70px;
+    display: flex;
     
 }
