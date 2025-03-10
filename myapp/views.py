@@ -1,7 +1,10 @@
 from django.shortcuts import render, redirect
 from django.views import View
 from django.contrib.auth import login, authenticate
-from .forms import Consumeform, CustomUserForm
+from .forms import Consumeform, CustomUserForm, LoginForm
+from django.contrib.auth.views import LoginView
+from django.urls import reverse_lazy
+from django.contrib import messages
 
 # Create your views here.
 
@@ -17,24 +20,22 @@ class signupview(View):
             user = form.save()
             login(request, user)
             return redirect('login.html')
-        
+        else:
+            print(form.errors)
         return render(request, 'register.html', {'form': form})
 
 #Vista Login
-class loginview(View):
-    def get(self, request):
-        return render(request, 'login.html')
+class loginview(LoginView):
+    redirect_authenticated_user = True
+    template_name = 'login.html'
+    form_class = LoginForm
+
+    def get_success_url(self):
+        return reverse_lazy('data_entry')
     
-    def post(self, request):
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
-        
-        if user is not None:
-            login(request, user)
-            return redirect('data_entry.html')
-        else:
-            return render(request, 'login.html', {'error': 'Usuario o contraseña incorrectos'})
+    def form_invalid(self, form):
+        messages.error(self.request,'Invalid username or password')
+        return self.render_to_response(self.get_context_data(form=form))
 
 #Vista Ingresar datos
 def enterdata(request):

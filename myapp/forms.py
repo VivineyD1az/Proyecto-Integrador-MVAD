@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from .models import Consume, CustomUser
 
 #Formulario de Ingreso de datos
@@ -17,3 +17,17 @@ class CustomUserForm(UserCreationForm):
     class Meta:
         model = CustomUser
         fields = ['first_name', 'last_name', 'username', 'password']
+
+#Formulario de Login
+class LoginForm(AuthenticationForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields["username"].widget.attrs.update(
+            {
+                "class": "form-control",
+                "placeholder": "Nombre de usuario",
+            }
+        )
+        self.fields["password"].widget.attrs.update(
+            {"class": "form-control", "placeholder": "Contraseña"}
+        )
