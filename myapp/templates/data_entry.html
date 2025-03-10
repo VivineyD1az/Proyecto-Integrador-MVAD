@@ -8,11 +8,10 @@
 <body>
     <div class="container">
         <h2>Ingreso de datos</h2>
-        <form action="">
-            <input type="number" placeholder="N° de mes" min="1" max="12">
-            <input type="number" placeholder="Costo total del consumo">  
+        <form method="post">
+            <input type="number" placeholder="N° de mes" min="1" max="12" value="{{form.month.value|default_if_none:''}}">
+            <input type="number" placeholder="Costo total del consumo" value="{{form.total_cost.value|default_if_none:''}}">  
         </form>
-        
         <button>Generar recomendación</button>
     </div>
 </body>
