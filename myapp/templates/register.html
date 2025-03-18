@@ -11,12 +11,14 @@
         <div class="form-box">
             <h2>Crear cuenta</h2>
             <p>Regístrate para continuar</p>
-            <form action="/login/" method="post">
-                {% csrf_token %}
-                <input type="text" placeholder="Nombre" required>
+            <form action="/register/" method="post">
+                {% csrf_token %}
+                {{ form.as_p }} <!--POR LO QUE MAS QUIERAN EN ESTE MUNDO NO QUITEN ESTA LINEA-->
+                
+                <!--<input type="text" placeholder="Nombre" required>
                 <input type="text" placeholder="Apellido" required>
                 <input type="text" placeholder="Usuario" required>
-                <input type="password" placeholder="Contraseña" required>
+                <input type="password" placeholder="Contraseña" required>-->
                 <button type="submit">Registrarse</button>
             </form>
             <p class="login-text">¿Ya tienes una cuenta? <a href="login">Iniciar sesión</a></p>

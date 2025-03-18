@@ -8,21 +8,25 @@ from django.contrib import messages
 
 # Create your views here.
 
-#Vista Register
-class signupview(View):
-    def get(self, request):
-        form = CustomUserForm()
-        return render(request, 'register.html', {'form': form})
-    
-    def post(self, request):
+def signupview(request):
+    print("Vista signupview llamada")  
+
+    if request.method == 'POST':
         form = CustomUserForm(request.POST)
         if form.is_valid():
+            print("Formulario válido. Guardando el usuario...")
             user = form.save()
+            messages.success(request, 'Usuario registrado correctamente')
             login(request, user)
-            return redirect('login.html')
+            return redirect('data_entry')
         else:
-            print(form.errors)
-        return render(request, 'register.html', {'form': form})
+            print("Formulario no válido.")
+            print(form.errors)  
+            messages.error(request, 'Hubo un error con el registro. Intenta nuevamente.')
+    else:
+        form = CustomUserForm()
+
+    return render(request, 'register.html', {'form': form})
 
 #Vista Login
 class loginview(LoginView):

@@ -22,7 +22,7 @@ from myapp.views import enterdata
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', signupview.as_view(), name='register'),
+    path('register/', signupview, name='register'),
     path('login/', loginview.as_view(), name='login'),
     path('data_entry/', enterdata, name='data_entry')
 ]

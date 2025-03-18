@@ -17,7 +17,24 @@ class CustomUserForm(UserCreationForm):
     class Meta:
         model = CustomUser
         fields = ['first_name', 'last_name', 'username', 'password']
-
+        widgets = {
+            'first_name': forms.TextInput(attrs={'placeholder': 'Nombre'}),
+            'last_name': forms.TextInput(attrs={'placeholder': 'Apellido'}),
+            'username': forms.TextInput(attrs={'placeholder': 'Usuario'}),
+            'password': forms.PasswordInput(attrs={'placeholder': 'Contraseña'}),
+        }
+    #password = forms.CharField(widget=forms.PasswordInput())
+    
+    #class Meta:
+     #   model = CustomUser
+      #  fields = ['first_name', 'last_name', 'username', 'password']
+    
+    def save(self, commit = True):
+       user = super().save(commit = False)
+       if commit:
+           user.save()
+       return user   
+    
 #Formulario de Login
 class LoginForm(AuthenticationForm):
     def __init__(self, *args, **kwargs):

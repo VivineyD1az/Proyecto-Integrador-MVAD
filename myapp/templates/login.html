@@ -12,6 +12,7 @@
             <h2>Iniciar sesión</h2>
             <p>¿No tienes una cuenta? <a class="crear-cuenta-link" href="../">Crear cuenta</a></p>
             <form>
+                {% csrf_token %}
                 <input type="text" placeholder="Usuario" required>
                 <input type="password" placeholder="Contraseña" required>
                 <div class="extra-options">
