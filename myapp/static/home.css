@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* TEXTO ECOHOME */
+h2 {
+    font-size: 35px;
+    color: #75766b;
+    margin-bottom: 15px;
+    position: absolute;
+    top: 20px;
+    left: 50px;
+}
+
+/* BOTON DE INGRESO Y REGISTRO */
+.enter-page {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    display: flex;
+    gap: 15px;
+}
+
+.enter-page a {
+    color: #75766b;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    margin-right: 35px;
+    margin-top: 15px;
+}
+
+.enter-page a:hover {
+    color: #75766b;
+    text-decoration: underline;
+}
+
+/* TEXTO "MEJORA CONUSMO" Y BOTÓN "EMPEZAR" */
+.container_textButton {
+    position: absolute;
+    left: 190px; 
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: 450px; 
+}
+
+.container_textButton p {
+    width: 100%; 
+    font-size: 40px;
+    color: #37474F;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-align: center;
+    
+}
+
+.container_textButton a {
+    background-color: #879D84;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center; 
+    margin-top: 10px;
+}
+
+
+/* IMAGEN */
+.image {
+    position: absolute;
+    right: 50px; 
+    top: 50%;
+    transform: translateY(-50%); 
+    text-align: center;
+}
+
+.image img {
+    width: 500px;
+    height: 400px;
+    border-radius: 10px;
+}
+
+/* TEXTO DE IMAGEN Y ENLACE DE REFERENCIA */
+.image p {
+    font-size: 10px;
+    color: #ccccc9;
+    margin-bottom: 15px;
+    position: absolute;
+    right: 80px;
+}
+
+.image a {
+    color: #ccccc9;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 10px;
+    margin-right: 35px;
+    margin-top: 15px;
+}
