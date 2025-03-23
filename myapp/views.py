@@ -50,3 +50,7 @@ def enterdata(request):
     else:
         form = Consumeform()
     return render(request, 'data_entry.html', {'form': form})
+
+#Vista de Inicio
+def home(request):
+    return render(request, 'home.html')
