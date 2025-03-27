@@ -31,7 +31,7 @@ def signupview(request):
 #Vista Login
 class loginview(LoginView):
     redirect_authenticated_user = True
-    template_name = 'login'
+    template_name = 'login.html'
 
     def get_form(self, form_class=None):
         """
